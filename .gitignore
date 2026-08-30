@@ -1,0 +1,7 @@
+/target
+*.stl
+*.step
+__pycache__/
+.venv/
+/ui/dist
+/enclosure/build
