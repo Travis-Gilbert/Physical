@@ -1,0 +1,30 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Neutral base. Themes override role values; the core ships no brand.",
+  "color": {
+    "$type": "color",
+    "role": {
+      "surface":     { "$value": "#111315" },
+      "surface-high":{ "$value": "#1a1d20" },
+      "ink":         { "$value": "#e8e8e6" },
+      "ink-muted":   { "$value": "#9aa0a6" },
+      "line":        { "$value": "#2a2e33" },
+      "accent":      { "$value": "#6f7bff" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": "4px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "12px" },
+    "4": { "$value": "16px" },
+    "6": { "$value": "24px" },
+    "8": { "$value": "32px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "sm": { "$value": "6px" },
+    "md": { "$value": "10px" },
+    "lg": { "$value": "16px" }
+  }
+}
