@@ -1,0 +1,17 @@
+[package]
+name = "physical-core"
+description = "The Physical daemon: catalog, module registry, and serving API."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+physical-contracts.workspace = true
+physical-hotplug.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[lints]
+workspace = true
