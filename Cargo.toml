@@ -1,0 +1,36 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/physical-contracts",
+    "crates/physical-hotplug",
+    "crates/physical-core",
+    "crates/physical-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/Travis-Gilbert/Physical"
+
+[workspace.dependencies]
+physical-contracts = { path = "crates/physical-contracts" }
+physical-hotplug = { path = "crates/physical-hotplug" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "signal"] }
+
+# Hardware dependencies (udev, tokio-udev, nusb, v4l) enter this table when the
+# first crate calls them, not before.
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+todo = "warn"
+unwrap_used = "warn"
