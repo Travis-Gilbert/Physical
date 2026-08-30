@@ -1,0 +1,14 @@
+[package]
+name = "physical-hotplug"
+description = "udev bridge. Turns kernel hotplug into typed capability events."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+physical-contracts.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
