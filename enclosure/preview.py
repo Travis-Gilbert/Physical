@@ -42,9 +42,12 @@ def render(
     verts = mesh.vertices - mesh.centroid
 
     # Camera space: u across, v up, w toward viewer (larger = nearer).
+    # `fwd` points from the origin toward the camera, so a vertex's projection
+    # onto it IS its nearness. Negating here (and in the cull below) silently
+    # renders the antipodal viewpoint: ask for a plan view, get the underside.
     u = verts @ right
     v = verts @ up
-    w = -(verts @ fwd)
+    w = verts @ fwd
 
     # Fit both axes independently, then take the tighter scale. Using
     # min(width, height) squashed wide elevations into a fraction of the canvas.
@@ -60,7 +63,7 @@ def render(
     normals = mesh.face_normals
 
     # Backface cull: keep faces whose normal points toward the camera.
-    facing = normals @ (-fwd)
+    facing = normals @ fwd
     keep = facing > 0.0
     tri, normals, facing = tri[keep], normals[keep], facing[keep]
 
